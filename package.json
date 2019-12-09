@@ -4,7 +4,7 @@
   "description": "Personal Website",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "sass": "node-sass -w scss/ -o dist/css/ --recursive"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/calcantara35/PortfolioWebsite/issues"
   },
-  "homepage": "https://github.com/calcantara35/PortfolioWebsite#readme"
+  "homepage": "https://github.com/calcantara35/PortfolioWebsite#readme",
+  "dependencies": {
+    "node-sass": "^4.13.0"
+  }
 }
