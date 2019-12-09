@@ -1,7 +1,8 @@
 @import url("https://fonts.googleapis.com/css?family=Gupter:400,700&display=swap");
 
-$color-dark: #444;
+$color-light-dark: #444;
 $color-white: #fff;
+$color-dark: #000;
 
 body,
 html {
@@ -48,7 +49,7 @@ nav ul li {
 }
 
 nav ul li a {
-  color: #000;
+  color: $color-dark;
   padding: 0 30px;
 }
 
