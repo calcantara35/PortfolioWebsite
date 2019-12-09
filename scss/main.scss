@@ -1,8 +1,10 @@
+@import "config";
 @import url("https://fonts.googleapis.com/css?family=Gupter:400,700&display=swap");
 
-$color-light-dark: #444;
-$color-white: #fff;
-$color-dark: #000;
+* {
+  // makes padding in the inside to not effect the width and height of it
+  box-sizing: border-box;
+}
 
 body,
 html {
@@ -10,6 +12,7 @@ html {
   margin: 0;
   color: $color-white;
   font-family: "Gupter", serif;
+  line-height: 1.1em;
 }
 
 a {
@@ -18,9 +21,61 @@ a {
 }
 
 body {
-  background: url("../imgs/bg.svg") no-repeat center;
-  background-size: cover;
-  padding-bottom: 20px;
+  @include background;
+}
+
+// Headings
+h1,
+h2,
+h3 {
+  margin: 0em;
+
+  &.lg-heading {
+    font-size: 3.5em;
+    text-align: center;
+    color: $color-light-dark;
+  }
+  &.sm-heading {
+    color: $color-light-dark;
+    text-align: center;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding: 0.2rem 1rem;
+  }
+}
+
+// Custome css below
+
+.text-secondary {
+  color: $secondary-color;
+}
+
+#home {
+  padding: 4rem;
+  height: 40%;
+
+  .icons {
+    margin-top: 1rem;
+    text-align: center;
+
+    a {
+      padding: 0.4rem;
+      color: $color-light-dark;
+      &:hover {
+        color: $secondary-color;
+        // using mixin, transition becomes globally accessed
+        @include easeOut();
+      }
+    }
+  }
+}
+
+.heroBg {
+  height: 900px;
+}
+
+.hideOnBig {
+  display: none;
 }
 
 #left {
@@ -51,23 +106,25 @@ nav ul li {
 nav ul li a {
   color: $color-dark;
   padding: 0 30px;
+  font-size: 1.2em;
 }
 
 #logo {
   font-size: 2em;
 }
 
-.container {
+.containerHero {
   text-align: center;
   width: 60%;
   margin: 110px auto;
 }
 
-h1 {
+#containerHeader {
   font-size: 3.5em;
+  margin-top: 4em;
 }
 
-.container p {
+.containerHero p {
   font-size: 1.3em;
   line-height: 1.4em;
 }
@@ -79,6 +136,9 @@ h1 {
 }
 
 @media screen and (max-width: 376px) {
+  .heroBg {
+    height: 700px;
+  }
   #left {
     width: 50px;
   }
@@ -91,12 +151,28 @@ h1 {
   nav ul {
     display: none;
   }
-  h1 {
+  #containerHeader {
     font-size: 2.3em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    line-height: 1.4em;
   }
-  .container p {
-    font-size: 0.93em;
+  .containerHero p {
+    font-size: 1em;
     line-height: 1em;
+  }
+  h1,
+  h2,
+  h3 {
+    &.lg-heading {
+      font-size: 1.4em;
+    }
+    &.sm-heading {
+      font-size: 1.1em;
+    }
+  }
+  #right {
+    top: 12%;
   }
 }
 

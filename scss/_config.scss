@@ -1,0 +1,21 @@
+$color-light-dark: #444;
+$color-white: #fff;
+$color-dark: #000;
+$secondary-color: #1eadd8;
+$show-home-image: true;
+$home-image: url("../imgs/bg.svg") no-repeat center;
+$bg-opacity: 0.9;
+// test
+@mixin easeOut {
+  transition: all 0.8s ease-out;
+}
+
+@mixin background {
+  @if $show-home-image {
+    &#bg-img {
+      background: $home-image;
+      background-size: cover;
+      padding-bottom: 5px;
+    }
+  }
+}
