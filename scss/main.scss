@@ -1,4 +1,6 @@
 @import "config";
+@import "menu";
+
 @import url("https://fonts.googleapis.com/css?family=Gupter:400,700&display=swap");
 
 * {
@@ -109,7 +111,7 @@ nav ul li a {
   font-size: 1.2em;
 }
 
-#logo {
+.logo {
   font-size: 2em;
 }
 
@@ -136,6 +138,12 @@ nav ul li a {
 }
 
 @media screen and (max-width: 376px) {
+  .hideOnBig {
+    display: inline;
+  }
+  .hideOnSm {
+    display: none;
+  }
   .heroBg {
     height: 700px;
   }
@@ -145,7 +153,10 @@ nav ul li a {
   #right {
     width: 50px;
   }
-  #logo {
+  .logo {
+    position: absolute;
+    top: 35px;
+    left: 35px;
     font-size: 1.2em;
   }
   nav ul {
