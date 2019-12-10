@@ -1,7 +1,7 @@
 // menu button
 .menu-btn {
   position: absolute;
-  z-index: 3;
+  z-index: 5;
   right: 35px;
   top: 35px;
   cursor: pointer;
@@ -34,5 +34,35 @@
         transform: rotate(-45deg) translate(7px, -6px);
       }
     }
+  }
+}
+
+// menu overlay
+.menu {
+  position: fixed;
+  top: -7.55%;
+  left: 0%;
+  width: 100%;
+  padding: 0em;
+  opacity: 0.95;
+  display: none;
+  z-index: 4;
+
+  // when show class gets added
+  &.show {
+    display: flex;
+  }
+
+  &-nav {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 0em;
+    padding: 0em;
+    background: $color-light-dark;
+    height: 80vh;
+    z-index: 2;
   }
 }
